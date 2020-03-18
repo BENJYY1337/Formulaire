@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Formulaire</title>
+</head>
+<style>
+    @keyframes slideInLeft {
+        from {
+            -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+            visibility: visible;
+        }
+    }
+
+        to {
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    }
+
+    form {
+        -webkit-animation-name: slideInLeft;
+        animation-name: slideInLeft;
+        animation-duration: 1.5s;
+}
+</style>
+<body>
+    <h1>Nous contacter</h1>
+    <form action="/formulaire/infos.php" method="POST">
+        <fieldset>
+            <legend>Nous contacter</legend>
+            <div>
+                <label for="emailinput">Votre email</label>
+                <input type="email" name="email" id="emailinput" placeholder="contact@mail.fr" required autofocus>
+            </div>
+            <div>
+                <label for="nameinput">Votre nom</label>
+                <input type="text" name="firstname" id="nameinput">
+            </div>
+                <label id="sexe">Sexe</label>
+                <select name="sexe" id="sexe">
+                    <option value="m">Masculin</option>
+                    <option value="f">Féminin</option>
+                </select>
+            <div>
+                <label for="dateinput">Date de naissance</label>
+                <input type="date" name="date" id="dateinput">
+            </div>
+            <div>
+                <label for="postalinput">Code postal</label>
+                <input type="text" name="postal" id="postalinput" inputmode="numeric">
+            </div>
+            <div>
+                <label for="passwordinput">Votre mot de passe</label>
+                <input type="password" name="password" id="passwordinput" minlength="8">
+            </div>
+            <div>
+                <label for="messageinput">Votre message</label>
+                <textarea name="message" id="messageinput" cols="30" rows="10" placeholder="votre message" spellcheck="true"></textarea>
+            </div>
+            <div>
+                <label for="fileinput">Pièce jointe</label>
+                <input type="file" name="file" id="fileinput">
+            </div>
+            <div>
+                <label><input type="checkbox" name="cgu" required checked>J'accepte les conditions d'utilisations</label>
+            </div>
+            <input type="submit" value="Envoyer un email">
+            <input type="reset" value="Annuler">
+        </fieldset>
+    </form>
+</body>
+</html>
